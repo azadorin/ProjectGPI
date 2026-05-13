@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import sys
+import RNA.utils as utils
+
+if len(sys.argv) != 2:
+    print('Error: Incorrect number of argument')
+    print('Usage:')
+    print('> project_1.py file.pdb')
+    exit()
+
+pdb_name = sys.argv[1]
+
+RNA = utils.parsePDB(pdb_name)
+utils.generate_dot_bracket(RNA)
